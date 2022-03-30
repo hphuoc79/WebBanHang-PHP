@@ -1,0 +1,38 @@
+.contact {
+  padding: 80px 0;
+}
+
+.contact-content {
+  padding: 0 0;
+}
+
+.contact-content-top-left img {
+  height: 100%;
+  width: 85%;
+  margin-left: 80px;
+}
+
+.contact-content-top-left {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.contact-content-top-right {
+  flex: 1;
+  padding-left: 22px;
+  border-left: 2px solid #dddddd;
+}
+
+.contact-content-top {
+  margin-bottom: 50px;
+}
+
+.contact-content h1 {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  justify-content: center;
+  color: blue;
+  margin-bottom: 15px;
+}

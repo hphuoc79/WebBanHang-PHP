@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script
+      src="https://kit.fontawesome.com/1147676ae7.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>CALA SHOP</title>
+
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="undefined"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Font-Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+    <link rel="stylesheet" href="../css/app.css" />
+    <link rel="stylesheet" href="../css/cart.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <h1>CALA SHOP</h1>
+      </div>
+
+      <div class="menu">
+        <li><a href="index.html">Trang Chủ</a></li>
+        <li><a href="introduce.html">Giới Thiệu</a></li>
+        <li>
+          <a href="cartegory.html">Danh Mục</a>
+          <ul class="sub-menu">
+            <li>
+              <a href="">Sản phẩm 1</a>
+              <ul>
+                <li><a href="">Sản phẩm 1.1</a></li>
+                <li><a href="">Sản phẩm 1.2</a></li>
+                <li><a href="">Sản phẩm 1.3</a></li>
+              </ul>
+            </li>
+            <li><a href="">Sản phẩm 2</a></li>
+            <li><a href="">Sản phẩm 3</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html">Liên Hệ</a></li>
+        <li><a href="">Thông Tin</a></li>
+      </div>
+
+      <div class="others">
+        <li>
+          <input placeholder="Tìm kiếm" type="text" />
+          <i class="fa fa-search"></i>
+        </li>
+        <li><a class="fa fa-user" href="login.html"></a></li>
+        <li><a class="fa fa-shopping-bag" href=""></a></li>
+      </div>
+    </header>
+    <!---------------------------------------------------Cart--------------------------------------------------->
+    <section class="cart">
+      <div class="container">
+        <div class="cart-top-wrap">
+          <div class="cart-top">
+            <div class="cart-top-cart cart-top-item">
+              <i class="fa fa-shopping-cart"></i>
+            </div>
+            <div class="cart-top-address cart-top-item">
+              <i class="fas fa-map-marked"></i>
+            </div>
+            <div class="cart-top-payment cart-top-item">
+              <i class="fas fa-money-check"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="cart-content row">
+          <div class="cart-content-left">
+            <table>
+              <tr>
+                <th>Sản phẩm</th>
+                <th>Tên sản phẩm</th>
+                <th>Màu</th>
+                <th>Size</th>
+                <th>Số lượng</th>
+                <th>Thành tiền</th>
+                <th>Xóa</th>
+              </tr>
+              <tr>
+                <td><img src="../images/img-product/2H-COURAGE.jpg" /></td>
+                <td><p>Áo phông SencondHand - COURAGE</p></td>
+                <td>
+                  <img src="../images/img-color/xanhdam.jpg" />
+                </td>
+                <td><p>L</p></td>
+                <td><input type="number" value="1" min="1" /></td>
+                <td>
+                  <p>100.000<sup>VND</sup></p>
+                </td>
+                <td>
+                  <span>X</span>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div class="cart-content-right">
+            <table>
+              <tr>
+                <th colspan="2">Tổng tiền giỏ hàng</th>
+              </tr>
+              <tr>
+                <td>Tổng sản phẩm</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td>Tổng tiền hàng</td>
+                <td>
+                  <p>200.000<sup>VND</sup></p>
+                </td>
+              </tr>
+              <tr>
+                <td>Tạm tính</td>
+                <td>
+                  <p style="color: red; font-weight: bold">
+                    200.000<sup>VND</sup>
+                  </p>
+                </td>
+              </tr>
+            </table>
+            <div class="cart-content-right-text">
+              <p>
+                Bạn sẽ được miễn phí SHIP khi đơn hàng có giá trị từ 500.000đ
+                trở lên
+              </p>
+              <p style="color: red; font-weight: bold">
+                Mua thêm <span style="font-size: 18px">300.000đ</span> để được
+                miễn phí SHIP
+              </p>
+            </div>
+            <div class="cart-content-right-button">
+              <button>Tiếp tục mua sắm</button>
+              <button>Thanh toán</button>
+            </div>
+            <div class="cart-content-right-dangnhap">
+              <p>Tài khoản CALA</p>
+              <p>Hãy <a href="">Đăng nhập</a> tài khoản của bạn</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!---------------------------------------------------app-container--------------------------------------------------->
+    <section class="app-container">
+      <p>Tải ứng dụng CALA SHOP</p>
+      <div class="app-cala">
+        <img src="../images/img-app/appstore.png" />
+        <img src="../images/img-app/googleplay.png" />
+      </div>
+      <p>Nhận tin sale của CALA</p>
+      <input type="text" placeholder="Nhập email của bạn..." />
+    </section>
+    <!---------------------------------------------------footer--------------------------------------------------->
+    <div class="footer-top">
+      <li><a href="contact.html">Liên hệ</a></li>
+      <li><a href="">Thông tin</a></li>
+      <li><a href="">Giới thiệu</a></li>
+      <li>
+        <a
+          href="https://www.facebook.com/phhuuphuoc79/"
+          class="fa fa-facebook"
+        ></a>
+        <a href="" class="fa fa-twitter"></a>
+        <a href="" class="fa fa-youtube"></a>
+      </li>
+    </div>
+    <div class="footer-center">
+      <p>
+        Địa chỉ: 475A Điện Biên Phủ, Phường 25, Quận Bình Thạnh, Tp.HCM <br />
+        <a href="mailto:phanhuuphuoc.2k@gmail.com">Email: CALAshop@gmail.com</a>
+        <br />
+        <a href="tel:0335947713">SĐT: 0335947713</a>
+      </p>
+    </div>
+    <div class="footer-bottom">&copyCALA All right reserved</div>
+    <div class="click">
+      <a class="gotopbtn" href="#"><i class="fas fa-angle-double-up"></i></a>
+    </div>
+  </body>
+  <script>
+    const header = document.querySelector("header");
+    window.addEventListener("scroll", function () {
+      x = window.pageYOffset;
+      if (x > 0) {
+        header.classList.add("sticky");
+      } else {
+        header.classList.remove("sticky");
+      }
+    });
+
+    const imgPosition = document.querySelectorAll(".aspect-ratio-169 img");
+    const imgContainer = document.querySelector(".aspect-ratio-169");
+    const dotItem = document.querySelectorAll(".dot");
+    let imgNumber = imgPosition.length;
+    let index = 0;
+    //console.log(imgPosition);
+    imgPosition.forEach(function (image, index) {
+      image.style.left = index * 100 + "%";
+      dotItem[index].addEventListener("click", function () {
+        slider(index);
+      });
+    });
+    function imgSlide() {
+      index++;
+      if (index >= imgNumber) {
+        index = 0;
+      }
+      slider(index);
+    }
+    function slider(index) {
+      imgContainer.style.left = "-" + index * 100 + "%";
+      const dotActive = document.querySelector(".active");
+      dotActive.classList.remove("active");
+      dotItem[index].classList.add("active");
+    }
+
+    setInterval(imgSlide, 5000);
+  </script>
+</html>
