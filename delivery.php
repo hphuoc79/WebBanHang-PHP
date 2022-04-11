@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
                     <p>Vui lòng chọn địa chỉ giao hàng</p>
                     <div class="delivery-content-left-dangnhap row">
                         <i class="fas fa-sign-in-alt"></i>
-                        <p>Đăng nhập (Nếu bạn đã có tài khoản của CALA)</p>
+                        <p><a href="login.php">Đăng nhập</a> (Nếu bạn đã có tài khoản của CALA)</p>
                     </div>
                     <br>
                     <input style="float: left;margin-right:12px" checked="checked" name="loaikhach" type="radio" value="khachle">
@@ -116,7 +116,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
                         </div>
                     </div>
                     <div class="delivery-content-left-button row">
-                        <a href=""><span> &#8810;</span><p>Quay lại giỏ hàng</p></a>
+                        <a href="cart.php"><span> &#8810;</span><p>Quay lại giỏ hàng</p></a>
                         <button type="submit"><p style="font-weight: bold;">THANH TOÁN VÀ GIAO HÀNG</p></button>
                     </div>
                     </form>

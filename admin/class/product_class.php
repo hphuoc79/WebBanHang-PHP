@@ -1,5 +1,4 @@
 <?php
-// include "../lib/database.php";
 include_once "../helper/format.php"
 ?>
 
@@ -97,11 +96,6 @@ include_once "../helper/format.php"
         $result = $this -> db ->select($query);
         return $result;
     }
-    // public function show_subcartegory(){
-    //     $query = "SELECT * FROM tbl_subcartegory ORDER BY subcartegory_id DESC";
-    //     $result = $this -> db ->select($query);
-    //     return $result;
-    // }
     public function get_sanpham($sanpham_id){
         $query = "SELECT * FROM tbl_sanpham WHERE sanpham_id = '$sanpham_id'";
         $result = $this -> db ->select($query);
@@ -138,11 +132,6 @@ include_once "../helper/format.php"
         return $result;
     }
     
-    // public function get_product_img($product_id){
-    //     $query = "SELECT * FROM tbl_product_img WHERE product_id = '$product_id'";
-    //     $result = $this -> db ->select($query);
-    //     return $result;
-    // }
     public function update_product($data,$file,$sanpham_id ) {
         $sanpham_tieude = $data['sanpham_tieude'];
         $sanpham_ma = $data['sanpham_ma'];

@@ -8,8 +8,7 @@ include "leftside.php";
            </div>
         </div>
     </section>
-    <section>
-    </section>
+
     <script src="js/script.js"></script>
 </body>
 </html>  

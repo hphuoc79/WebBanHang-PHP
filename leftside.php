@@ -20,8 +20,8 @@ if (isset($_GET['loaisanpham_id'])|| $_GET['loaisanpham_id']!=NULL){
             <div class="row">
                 <div class="cartegory-left">
                     <ul>
-                    <li><a style="color: black" href="index.html">Trang Chủ</a></li>
-                    <li><a style="color: black" href="introduce.html">Giới Thiệu</a></li>
+                    <li><a style="color: black" href="index.php">Trang Chủ</a></li>
+                    <li><a style="color: black" href="introduce.php">Giới Thiệu</a></li>
                     <?php
                         $show_danhmuc = $index ->show_danhmuc();
                         if($show_danhmuc){while($result = $show_danhmuc ->fetch_assoc()) {
@@ -45,7 +45,7 @@ if (isset($_GET['loaisanpham_id'])|| $_GET['loaisanpham_id']!=NULL){
                         <?php
                         } }
                         ?>  
-                        <li><a style="color: black" href="contact.html">Liên Hệ</a></li>
-                        <li><a style="color: black" href="">Thông Tin</a></li>                
+                        <li><a style="color: black" href="contact.php">Liên Hệ</a></li>
+                        <li><a style="color: black" href="reference.php">Tham Khảo Size</a></li>                
                     </ul>
                 </div>

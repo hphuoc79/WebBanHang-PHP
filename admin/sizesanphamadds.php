@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
                         <option value="XXL">Size XXL</option>
                     </select>
                    
-                    <button class="admin-btn" type="submit">Gửi</button>             
+                    <button class="admin-btn" type="submit">Thêm</button>             
                 </form>
             </div>           
         </div>

@@ -1,7 +1,5 @@
 <?php
-// include "../lib/database.php";
-// include "../lib/session.php";
-// include "../helper/format.php"
+
 ?>
 
 <?php

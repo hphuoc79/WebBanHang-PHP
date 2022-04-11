@@ -109,9 +109,9 @@ if (isset($_GET['sanpham_id'])|| $_GET['sanpham_id']!=NULL){
                                 <div class="product-content-right-bottom-title-item baoquan">
                                     <p>Bảo quản</p>
                                 </div>
-                                <div class="product-content-right-bottom-title-item">
+                                <!-- <div class="product-content-right-bottom-title-item">
                                     <p>Tham khảo size</p>
-                                </div>
+                                </div> -->
                              </div>
                             <div class="product-content-right-bottom-content">
                                 <div class="product-content-right-bottom-content-chitiet">

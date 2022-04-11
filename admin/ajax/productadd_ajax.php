@@ -1,7 +1,5 @@
 <?php
 include "../class/product_class.php";
-// define("PATH_ROOT", dirname(__FILE__));
-// include_once PATH_ROOT . "../lib/database.php";
 define('__ROOT__', dirname(dirname(__FILE__))); 
 require_once(__ROOT__.'/lib/database.php');
 

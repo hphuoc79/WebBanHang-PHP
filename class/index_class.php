@@ -3,8 +3,6 @@
  require_once(__ROOT__.'/admin/lib/database.php');
  require_once(__ROOT__.'/admin/lib/session.php');
  require_once(__ROOT__.'/admin/helper/format.php');
-//  include_once '../helper/format.php';
-//  include_once '../lib/database.php';
 ?>
 
 <?php
@@ -20,53 +18,24 @@
         $this ->fm = new Format();
     }
 
-    public function show_product_indexA(){
-        // $query = "SELECT * FROM tbl_baiviet ORDER BY baiviet_id DESC";
-        $query = "SELECT tbl_baiviet.*, tbl_danhmuc.danhmuc_ten
-        FROM tbl_baiviet INNER JOIN tbl_danhmuc ON tbl_baiviet.danhmuc_id = tbl_danhmuc.danhmuc_id
-        ORDER BY tbl_baiviet.baiviet_id DESC  ";
+    public function check_user($username,$passwords){
+        $query = "SELECT * FROM member  WHERE username = '$username' AND passwords = '$passwords' LIMIT 1 ";
         $result = $this -> db ->select($query);
-        return $result;
-    }
-    public function show_danhmuc_indexA($danhmuc_id){
-        // $query = "SELECT * FROM tbl_baiviet ORDER BY baiviet_id DESC";
-        $query = "SELECT tbl_baiviet.*, tbl_danhmuc.danhmuc_ten
-        FROM tbl_baiviet INNER JOIN tbl_danhmuc ON tbl_baiviet.baiviet_danhmuc = tbl_danhmuc.danhmuc_id
-        WHERE danhmuc_id = '$danhmuc_id'
-        ORDER BY tbl_baiviet.baiviet_id DESC LIMIT 1,3   ";
-        $result = $this -> db ->select($query);
-        return $result;
-    }
-    public function show_product_indexB(){
-        // $query = "SELECT * FROM tbl_baiviet ORDER BY baiviet_id DESC";
-        $query = "SELECT tbl_baiviet.*, tbl_danhmuc.danhmuc_ten
-        FROM tbl_baiviet INNER JOIN tbl_danhmuc ON tbl_baiviet.baiviet_danhmuc = tbl_danhmuc.danhmuc_id
-        ORDER BY tbl_baiviet.baiviet_id DESC LIMIT 4,12   ";
-        $result = $this -> db ->select($query);
-        return $result;
-    }
-    public function show_danhmuc_indexB($danhmuc_id){
-        // $query = "SELECT * FROM tbl_baiviet ORDER BY baiviet_id DESC";
-        $query = "SELECT tbl_baiviet.*, tbl_danhmuc.danhmuc_ten
-        FROM tbl_baiviet INNER JOIN tbl_danhmuc ON tbl_baiviet.baiviet_danhmuc = tbl_danhmuc.danhmuc_id
-        WHERE danhmuc_id = '$danhmuc_id'
-        ORDER BY tbl_baiviet.baiviet_id DESC LIMIT 4,12   ";
-        $result = $this -> db ->select($query);
-        return $result;
-    }
-    public function show_product_indexC($baiviet_id){
-        // $query = "SELECT * FROM tbl_question WHERE baiviet_id = '$baiviet_id' ORDER BY question_id DESC";
-        $query = "SELECT tbl_baiviet.*, tbl_danhmuc.danhmuc_ten
-        FROM tbl_baiviet INNER JOIN tbl_danhmuc ON tbl_baiviet.danhmuc_id = tbl_danhmuc.danhmuc_id
-        WHERE baiviet_id = '$baiviet_id'";
-        $result = $this -> db ->select($query);
-        return $result;
-    }
-    public function show_question($baiviet_id) {
-        $query = "SELECT * FROM tbl_question WHERE baiviet_id = '$baiviet_id' ORDER BY question_id DESC";
-        $result = $this -> db ->select($query);
-        return $result;
-    }
+        if($result!=false) {
+            $value = $result ->fetch_assoc();
+            // Session::set('user_login',true);
+            Session::set('username',$value['username']);
+            Session::set('phone',$value['phone']);
+            Session::set('id',$value['id']);
+            // echo Session::get('admin_name');
+            header('Location:index.php');
+        }
+        else {
+            $alert = "Tên đăng nhập hoặc mật khẩu không đúng";
+            return $alert;
+        }}
+
+    
     public function get_anh($sanpham_id) {
         $query = "SELECT * FROM tbl_sanpham_anh WHERE sanpham_id = '$sanpham_id' ORDER BY sanpham_anh_id DESC";
         $result = $this -> db ->select($query);
@@ -74,11 +43,6 @@
     }
     public function get_size($sanpham_id) {
         $query = "SELECT * FROM tbl_sanpham_size WHERE sanpham_id = '$sanpham_id' ORDER BY sanpham_size_id DESC";
-        $result = $this -> db ->select($query);
-        return $result;
-    }
-    public function show_answer($baiviet_id){
-        $query = "SELECT * FROM tbl_question_answer WHERE baiviet_id = '$baiviet_id' ORDER BY question_answer_id DESC";
         $result = $this -> db ->select($query);
         return $result;
     }
@@ -152,26 +116,13 @@
         $result = $this -> db ->select($query);
         return $result;
     }
-    // public function show_danhmucE($danhmuc_id){
-    //     $query = "SELECT * FROM tbl_danhmuc WHERE danhmuc_id = '$danhmuc_id' ORDER BY danhmuc_id DESC";
-    //     $result = $this -> db ->select($query);
-    //     return $result;
-    // }
-    // public function show_subcartegory(){
-    //     $query = "SELECT * FROM tbl_subcartegory ORDER BY subcartegory_id DESC";
-    //     $result = $this -> db ->select($query);
-    //     return $result;
-    // }
+
     public function get_product($product_id){
         $query = "SELECT * FROM tbl_baiviet WHERE baiviet_id = '$product_id'";
         $result = $this -> db ->select($query);
         return $result;
     }
-    // public function get_product_img($product_id){
-    //     $query = "SELECT * FROM tbl_product_img WHERE product_id = '$product_id'";
-    //     $result = $this -> db ->select($query);
-    //     return $result;
-    // }
+
     
         
 
@@ -196,98 +147,7 @@
         return $string;
     }
 
-    public function search_text($text){
-        $query = "SELECT tbl_baiviet.*, tbl_danhmuc.danhmuc_ten
-        FROM tbl_baiviet INNER JOIN tbl_danhmuc ON tbl_baiviet.danhmuc_id = tbl_danhmuc.danhmuc_id
-        WHERE baiviet_tieude REGEXP '$text' ORDER BY tbl_baiviet.baiviet_id";
-        $result = $this -> db ->select($query);
-        return $result;
 
-    }
-
-    public function check_user($user_name,$user_password){
-        $query = "SELECT * FROM tbl_user  WHERE user_ten = '$user_name' AND user_password = '$user_password' LIMIT 1 ";
-        $result = $this -> db ->select($query);
-        if($result!=false) {
-            $value = $result ->fetch_assoc();
-            // Session::set('user_login',true);
-            Session::set('user_ten',$value['user_ten']);
-            Session::set('user_id',$value['user_id']);
-            Session::set('user_img',$value['user_img']);
-        }
-        else {
-            $alert = "Tên đăng nhập hoặc mật khẩu không đúng";
-            return $alert;
-        }
-        // return $result;
-    }
-    public function insertcomment($baiviet_id,$content,$comment_user) {
-        $query = "INSERT INTO tbl_comment (baiviet_id,comment_noidung,comment_user) VALUES ('$baiviet_id','$content','$comment_user')";
-        $result = $this ->db ->insert($query);
-        return $result;               
-    }
-    public function insert_question_answer($baiviet_id,$content,$user_ten,$question_id) {
-        $query = "INSERT INTO tbl_question_answer (baiviet_id,content,user_ten,question_id) VALUES ('$baiviet_id','$content','$user_ten','$question_id')";
-        $result = $this ->db ->insert($query);
-        return $result;   
-    }
-    public function show_question_answer($question_id) {
-        $query = "SELECT * FROM tbl_question_answer WHERE question_id = '$question_id' ORDER BY question_answer_id ";
-        $result = $this -> db ->select($query);
-        return $result;
-    }
-    public function insert_quesion($data,$file) {
-        $baiviet_id = $data['baiviet_id'];
-        $user_ten = $data['user_ten'];
-        $baiviet_noidung = $data['baiviet_noidung'];
-        $file_name = $_FILES['baiviet_anh']['name'];
-        $file_size = $_FILES['baiviet_anh']['size'];
-        $file_temp = $_FILES['baiviet_anh']['tmp_name'];
-        $div = explode('.',$file_name);
-        $file_ext = strtolower(end($div));
-        $baiviet_anh = substr(md5(time()),0,10).'.'.$file_ext;
-        $upload_image = "admin/uploads/".$baiviet_anh;
-        $target_file = basename($file_name);
-        $filetype = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-        if($filetype != "jpg" && $filetype != "png" && $filetype != "jpeg" ) {
-            $alert = "Chỉ chọn file jpg, png, jpeg nhé bạn hiền";
-            return $alert;
-        }
-        else {
-            move_uploaded_file( $file_temp,$upload_image);
-            $query = "INSERT INTO tbl_question (baiviet_id,user_ten,baiviet_noidung,baiviet_anh) VALUES 
-            ('$baiviet_id','$user_ten','$baiviet_noidung','$baiviet_anh')";
-            $result = $this ->db ->insert($query);
-          //   header('Location:productlist.php');
-            return $result;     
-        }
-       
-    }
-    public function insert_user_register($useremail,$username,$password) {
-        $query = "INSERT INTO tbl_user (user_email,user_ten,user_password) VALUES ('$useremail','$username','$password')";
-        $result = $this ->db ->insert($query);
-        header('Location:index.php');
-        return $result;               
-    }
-    public function showcomment($baiviet_id){
-        $query = "SELECT * FROM tbl_comment WHERE baiviet_id = '$baiviet_id' ORDER BY comment_id DESC";
-        $result = $this -> db ->select($query);
-        return $result;
-    }
-    
-    public function check_register($user_ten){
-        $query = "SELECT * FROM tbl_user  WHERE user_ten = '$user_ten' LIMIT 1 ";
-        $result = $this -> db ->select($query);
-        if($result) {
-            Session::set('register-name',false);
-            $alert = "Tên đăng nhập đã tồn tại!";
-            return $alert;
-        }
-        else {
-            Session::set('register-name',true);
-        }
-        // return $result;
-    }
    public function getCurURL()
 {
     if (isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] == "on") {
@@ -457,6 +317,8 @@
         $result = $this -> db ->select($query);
         return $result;
     }
+
+    
 
 }
 

@@ -1,9 +1,6 @@
 <?php
 include "header.php";
 include "leftside.php";
-// include "class/cartegory_class.php";
-// define('__ROOT__', dirname(dirname(__FILE__))); 
-// require_once(__ROOT__.'../admin/class/cartegory_class.php');
 ?>
 <?php
 $product = new product();
@@ -17,7 +14,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     $upload_image = "uploads/".$sp_anh;
     move_uploaded_file( $file_temp,$upload_image);
 	$insert_anhsp =$product ->insert_anhsp($sanpham_id,$sp_anh);
-
 }
 ?>
         <div class="admin-content-right">

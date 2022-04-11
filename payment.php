@@ -41,7 +41,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         ?>
              <div class="payment-content row">
                 <div class="payment-content-left">
-                        <form action="" method="POST">
+                        <form action="" method="POST"> 
+                       
                             <div class="payment-content-left-method-delivery">
                                 <p style="font-weight: bold;">Phương thức giao hàng</p> <br>
                             <div class="payment-content-left-method-delivery-item">
@@ -67,6 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
                                 <div class="payment-content-left-method-payment-item-img">
                                     <img src="image/vcb.png" alt="">
                                 </div>
+                                <!-- <form action="payment_momo.php" method="POST" enctype="application/x-www-form-urlencoded" > -->
                                 <div class="payment-content-left-method-payment-item">
                                     <input name="method-payment" type="radio">
                                     <label for="">Thanh toán Momo</label>
@@ -74,6 +76,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
                                 <div class="payment-content-left-method-payment-item-img">
                                     <img src="image/momo.png" alt="">
                                 </div>
+                                
+                            <!-- </form> -->
                                 <div class="payment-content-left-method-payment-item">
                                     <input value="Thu tiền tận nơi" checked name="method-payment" type="radio">
                                     <label for="">Thu tiền tận nơi</label>
@@ -86,15 +90,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
                         </form>
                 </div>
                 <div class="payment-content-right">
-                    <div class="payment-content-right-button">
+                    <!-- <div class="payment-content-right-button">
                         <input type="text" placeholder="Mã giảm giá/Quà tặng">
                         <button><i class="fas fa-check"></i></button>
                     </div>
                     <div class="payment-content-right-button">
                         <input type="text" placeholder="Mã cộng tác viên">
                         <button><i class="fas fa-check"></i></button>
-                    </div>
-                    <div class="payment-content-right-mnv">
+                    </div> -->
+                    <!-- <div class="payment-content-right-mnv">
                         <select name="" id="">
                             <option value="">Chọn mã nhân viên thân thiết</option>
                             <option value="">D345</option>
@@ -102,7 +106,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
                             <option value="">T567</option>
                             <option value="">D333</option>
                         </select>
-                    </div>
+                    </div> -->
                     <br>
                     <table>
                         <tr>

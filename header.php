@@ -38,7 +38,7 @@ $index = new index;
                 <div class="top-menu-items">
                     <ul>
                         <li><a style="color: black" href="index.php">Trang Chủ</a></li>
-                        <li><a style="color: black" href="introduce.html">Giới Thiệu</a></li>
+                        <li><a style="color: black" href="introduce.php">Giới Thiệu</a></li>
                         <?php
                         $show_danhmuc = $index ->show_danhmuc();
                         if($show_danhmuc){while($result = $show_danhmuc ->fetch_assoc()) {
@@ -65,7 +65,7 @@ $index = new index;
                         } }
                         ?>
                         <li><a style="color: black" href="contact.php">Liên Hệ</a></li>
-                        <li><a style="color: black" href="">Thông Tin</a></li>
+                        <li><a style="color: black" href="reference.php">Tham Khảo Chọn Size</a></li>
                     </ul>
                 </div>
                 <div class="top-menu-icons">
@@ -75,10 +75,13 @@ $index = new index;
                             <i class="fas fa-search"></i>
                         </li>
                         <li>
-                            <i class="fas fa-user-secret"></i>
+                            
+                            <a style="color: black;" href="/calashop/login.php"><i class="fas fa-user-secret"></i></a>
+                            <a><?php echo Session::get('username') ?></span></a>
+                            
                         </li>
                         <li>
-                            <a href="cart.php"><i class="fas fa-shopping-cart"></i><span><?php  if(Session::get('SL'))  {echo Session::get('SL'); } ?></span></a>
+                            <a href="cart.php"><i class="fas fa-shopping-cart"></i><span><?php if(Session::get('SL'))  {echo Session::get('SL'); } ?></span></a>
                             <div class="cart-content-mini">
                                 <div class="cart-content-mini-top">
                                     <P>Giỏ hàng</P>
@@ -93,7 +96,7 @@ $index = new index;
                                     <img style="width:50px" src="<?php echo $result['sanpham_anh']  ?>" alt="">
                                     <div class="cart-content-item-text">
                                     <h1><?php echo $result['sanpham_tieude']  ?></h1> 
-                                    <p>Màu: xanh lơ</p>
+                                    <!-- <p>Màu: <?php echo $result['color_ten']  ?></p> -->
                                     <p>Size: <?php echo $result['sanpham_size']  ?></p>
                                     <p>SL: <?php echo $result['quantitys']  ?></p>
                                     </div>

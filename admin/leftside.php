@@ -18,6 +18,9 @@ if(isset($_GET['admin_id'])){
                         <li><a href="orderlistall.php">Tất cả Đơn hàng</a></li>
                     </ul>
                 </li>
+                
+                <li><a href="member.php"><img style="width:30px" src="icon/userr.png" alt="">Tài khoản khách hàng</a></li>
+
                 <li><a href="#"><img style="width:20px" src="icon/options.png" alt="">Danh Mục</a>
                     <ul>
                         <li><a href="cartegorylist.php">Danh sách</a></li>

@@ -7,10 +7,10 @@ $admin = new admin();
 ?>
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST'){
-    $username = $_POST['username'];
-    $userpassword = md5($_POST['password']);
+    $adminname = $_POST['admin'];
+    $adminpassword = md5($_POST['pw']);
     // var_dump($_POST);
-	$check_admin = $admin ->check_admin($username,$userpassword);
+	$check_admin = $admin ->check_admin($adminname,$adminpassword);
 }
 ?>
 <!DOCTYPE html>
@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/54f0cb7e4a.js" crossorigin="anonymous"></script>
-    <title>CALA-Login</title>
+    <title>CALA ADMIN-Login</title>
 </head>
 <body>
     <div class="login">
@@ -31,8 +31,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
             ?></span>
             <h1>CALA - Login</h1>
             <form action="" method="POST">
-                <input type="text" name="username" placeholder="Username">
-                <input type="password" name="password" placeholder="Password">
+                <input type="text" name="admin" placeholder="Adminname">
+                <input type="password" name="pw" placeholder="Password">
                 <button type="submit">Đăng Nhập</button>
             </form>
         </div>
