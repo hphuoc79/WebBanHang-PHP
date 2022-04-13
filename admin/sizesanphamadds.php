@@ -37,6 +37,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
                         <option value="L">Size L</option>
                         <option value="XL">Size XL</option>
                         <option value="XXL">Size XXL</option>
+                        <option value="31">Size 31</option>
+                        <option value="32">Size 32</option>
+                        <option value="33">Size 33</option>
+                        <option value="34">Size 34</option>
+                        <option value="38">Size 38</option>
+                        <option value="39">Size 39</option>
+                        <option value="40">Size 40</option>
+                        <option value="41">Size 41</option>
+                        <option value="42">Size 42</option>
                     </select>
                    
                     <button class="admin-btn" type="submit">Thêm</button>             

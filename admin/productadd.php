@@ -64,8 +64,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])){
                     <p>S</p>    <input type="checkbox" name="sanpham-size[]" value="S"> 
                     <p>M</p>    <input type="checkbox" name="sanpham-size[]" value="M"> 
                     <p>L</p>    <input type="checkbox" name="sanpham-size[]" value="L">
-                    <p>XL</p>   <input type="checkbox" name="sanpham-size[]" value="XL">  
+                    <p>XL</p>   <input type="checkbox" name="sanpham-size[]" value="XL"> 
                     <p>XXL</p>  <input type="checkbox" name="sanpham-size[]" value="XXL">  
+                    <p>31</p>  <input type="checkbox" name="sanpham-size[]" value="31"> 
+                    <p>32</p>  <input type="checkbox" name="sanpham-size[]" value="32">
+                    <p>33</p>  <input type="checkbox" name="sanpham-size[]" value="33">
+                    <p>34</p>  <input type="checkbox" name="sanpham-size[]" value="34">
+                    <p>38</p>  <input type="checkbox" name="sanpham-size[]" value="38">  
+                    <p>39</p>  <input type="checkbox" name="sanpham-size[]" value="39">  
+                    <p>40</p>  <input type="checkbox" name="sanpham-size[]" value="40">  
+                    <p>41</p>  <input type="checkbox" name="sanpham-size[]" value="41"> 
+                    <p>42</p>  <input type="checkbox" name="sanpham-size[]" value="42"> 
+                   
                     </div>
                     <label for="">Giá sản phẩm<span style="color: red;">*</span></label> <br>
                     <input required type="text" name="sanpham_gia"> <br>  

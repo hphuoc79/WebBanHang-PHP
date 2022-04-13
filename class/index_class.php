@@ -27,6 +27,7 @@
             Session::set('username',$value['username']);
             Session::set('phone',$value['phone']);
             Session::set('id',$value['id']);
+            Session::set('fullname',$value['fullname']);
             // echo Session::get('admin_name');
             header('Location:index.php');
         }

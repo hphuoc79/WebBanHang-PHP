@@ -12,15 +12,22 @@ include "header.php";
 }
 
 .contact-content-top-left img {
-  height: 80%;
-  width: 75%;
+  height: 550px;
+  width: 500px;
   margin-left: 80px;
+  border-radius:5%;
+-moz-border-radius:10%;
+-webkit-border-radius:20%;
+
 }
 
 .contact-content-top-right img {
-  height: 70%;
-  width: 65%;
-  margin-left: 80px;
+  height: 550px;
+  width: 500px;
+  margin-right: 80px;
+  border-radius:5%;
+-moz-border-radius:10%;
+-webkit-border-radius:20%;
 }
 
 .contact-content-top-left {
@@ -35,7 +42,8 @@ include "header.php";
 }
 
 .contact-content-top-left p{
-    text-align: right;
+    text-align: left;
+    margin-left: 70px;
 }
 
 .contact-content-top {

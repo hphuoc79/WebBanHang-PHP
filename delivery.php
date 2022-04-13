@@ -15,6 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 	$insert_order = $index ->insert_order($session_idA,$loaikhach,$customer_name,$customer_phone,
     $customer_tinh,$customer_huyen,$customer_xa,$customer_diachi);
 
+    Session::init();
 
 }
 ?>
@@ -61,12 +62,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
                         <div class="delivery-content-left-input-top-item">
                             <label for="">Họ tên <span style="color: red;">*</span></label>
                             <input name="customer_name" oninvalid="this.setCustomValidity('Vui lòng không để trống')"
-                             oninput="this.setCustomValidity('')" required type="text">
+                             oninput="this.setCustomValidity('')" required type="text" value=<?php echo Session::get('fullname') ?>>
                         </div>
                         <div class="delivery-content-left-input-top-item">
                             <label for="">Điện thoại <span style="color: red;">*</span></label>
                             <input name="customer_phone" oninvalid="this.setCustomValidity('Vui lòng không để trống')"
-                             oninput="this.setCustomValidity('')" required  type="text">
+                             oninput="this.setCustomValidity('')" required  type="text" value=<?php echo Session::get('phone') ?>>
                         </div>
                         <div class="delivery-content-left-input-top-item">
                             <label for="">Tỉnh/Tp <span style="color: red;">*</span></label>
